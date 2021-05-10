@@ -1,5 +1,17 @@
+/* eslint-disable no-plusplus */
 // Este es el punto de entrada de tu aplicacion
+// import { myFunction } from "./index.js";
+import { changeRoute } from "./lib/router.js";
 
-import { myFunction } from './lib/index.js';
 
-myFunction();
+const init = () => {
+  window.addEventListener('hashchange', () => {
+    // myFunction();
+    changeRoute(window.location.hash);
+
+  });
+  window.location.hash = "#/login";
+};
+let app = firebase.app();
+console.log(app);
+window.addEventListener('load', init);
