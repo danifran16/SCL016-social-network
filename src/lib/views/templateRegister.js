@@ -1,3 +1,5 @@
+import { userNew } from "../firebase.js";
+
 export const register = () => {
   const divRegister = document.createElement("div");
   const viewRegister = `
@@ -36,5 +38,22 @@ export const register = () => {
     </form>
     `;
   divRegister.innerHTML = viewRegister;
+  const signupForm = divRegister.querySelector("#signup-form");
+  // id formulario de registro
+  const btnRegister = divRegister.querySelector("#btn-register");
+  btnRegister.addEventListener("click", (event) => {
+    console.log("helloooooo");
+    event.preventDefault(); // para cancelar el evento del reinicio del formulario
+    // const signupUserName = document.querySelector('#singup-username').value;
+    const signupEmail = divRegister.querySelector("#signup-email").value;
+    const signupPassword = divRegister.querySelector("#signup-password").value;
+    // const signupPassword2 = document.querySelector('#signup-password2').value;
+    userNew(signupEmail, signupPassword);
+    // Limpiar el form
+    signupForm.reset();
+  });
+
   return divRegister;
 };
+
+// const generateRegisterListener = () => {};
