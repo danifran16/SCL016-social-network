@@ -6,7 +6,7 @@ const showTemplate = (hash) => {
   containerRoot.innerHTML = "";
 
   switch (hash) {
-    case "#/login":
+    case '#/login':
       containerRoot.appendChild(login());
       break;
     case "#/register":

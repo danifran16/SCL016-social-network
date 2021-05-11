@@ -4,13 +4,14 @@
 import { changeRoute } from "./lib/router.js";
 
 
+
 const init = () => {
   window.addEventListener('hashchange', () => {
     // myFunction();
     changeRoute(window.location.hash);
 
   });
-  window.location.hash = "#/login";
+  window.location.hash = '#/login';
 };
 let app = firebase.app();
 console.log(app);
