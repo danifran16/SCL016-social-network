@@ -1,14 +1,14 @@
-import { userNew } from "../firebase.js";
+import { userNew } from '../firebase.js';
 
 export const register = () => {
-  const divRegister = document.createElement("div");
+  const divRegister = document.createElement('div');
   const viewRegister = `
      <form id="signup-form" class="formulario">
       <a href="#/login">
         <i id="arrow" class="fas fa-chevron-left"></i>
       </a>
       <div>
-        <img class="logo" src="./imagen/logo_wup_peq.jpeg">
+        <img class="logo" src="./imagen/./imagen/logo_wup.jpg">
       </div>
       <div class="contenedor">
         <p>Regístrate con tu E-mail:</p>
@@ -38,15 +38,15 @@ export const register = () => {
     </form>
     `;
   divRegister.innerHTML = viewRegister;
-  const signupForm = divRegister.querySelector("#signup-form");
+  const signupForm = divRegister.querySelector('#signup-form');
   // id formulario de registro
-  const btnRegister = divRegister.querySelector("#btn-register");
-  btnRegister.addEventListener("click", (event) => {
-    console.log("helloooooo");
+  const btnRegister = divRegister.querySelector('#btn-register');
+  btnRegister.addEventListener('click', (event) => {
+    console.log('helloooooo');
     event.preventDefault(); // para cancelar el evento del reinicio del formulario
     // const signupUserName = document.querySelector('#singup-username').value;
-    const signupEmail = divRegister.querySelector("#signup-email").value;
-    const signupPassword = divRegister.querySelector("#signup-password").value;
+    const signupEmail = divRegister.querySelector('#signup-email').value;
+    const signupPassword = divRegister.querySelector('#signup-password').value;
     // const signupPassword2 = document.querySelector('#signup-password2').value;
     userNew(signupEmail, signupPassword);
     // Limpiar el form

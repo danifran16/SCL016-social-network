@@ -5,7 +5,7 @@ export const login = () => {
   const viewLogin = ` <div id="root"><div class="contenedor">
   <form id="login-form" class="formulario">
     <div>
-      <img class="logo" src="./imagen/logo_wup_peq.jpeg">
+      <img class="logo" src="./imagen/logo_wup.jpg">
     </div>
     <div class="">
       <p>Login:</p>
@@ -17,14 +17,16 @@ export const login = () => {
         <i class="fas fa-key icon"></i>
         <input class="input-init" type="password" id="login-password" placeholder="Contraseña">
       </div>
-      <div class="input-contenedor">
+      <div>
         <a href="#/feed"><input type="submit" value="Ingresa" class="button"></a>
       </div>
     </div>
   </form>
   <div class="formulario-2">
     <div class="input-contenedor-google">
-     <img class="google-icon" src="./imagen/logo_mail.jpg">
+     <div>
+        <img class="google-icon" src="./imagen/logo_mail.jpg">
+     </div>
      <button id="login-google" class="btn-google">Ingresa con</button>
      <img class="google-icons" src="./imagen/logo_google.jpg">
     </div>
@@ -39,6 +41,6 @@ export const login = () => {
   const googleLogin = divLogin.querySelector('#login-google');
   googleLogin.addEventListener('click', () => {
     googleProvider();
-  })
+  });
   return divLogin;
 };

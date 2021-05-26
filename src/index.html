@@ -10,7 +10,7 @@
       href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
     />
     <title>Word UP</title>
-    <link rel="icon" href="./imagen/logo_wup_peq.jpeg"/>
+    <link rel="icon" href="./imagen/logo_wup.jpg"/>
   </head>
 
   <body>
@@ -42,7 +42,18 @@
   };
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
+  const auth = firebase.auth();
   firebase.analytics();
+
+  // Initialize Cloud Firestore through Firebase
+firebase.initializeApp({
+  apiKey: '### FIREBASE API KEY ###',
+  authDomain: '### FIREBASE AUTH DOMAIN ###',
+  projectId: '### CLOUD FIRESTORE PROJECT ID ###'
+});
+
+var db = firebase.firestore();
+
 </script>
     <script type="module" src="main.js"></script>
   </body>
