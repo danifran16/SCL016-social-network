@@ -2,39 +2,43 @@ import { googleProvider } from '../firebase.js';
 
 export const login = () => {
   const divLogin = document.createElement('div');
-  const viewLogin = ` <div class="login-container">
+  const viewLogin = ` <div id="root"><div class="contenedor">
+  <form id="login-form" class="formulario">
     <div>
-    <form>
-      <div>
-        <img class="logo-app" src="./imagen/logoApp.png" />
-      </div>
-      <div class="div-container">
-        <i class="fas fa-envelope"></i>
-        <input class="div-container__input" type="email" placeholder="Email"/>
-      </div>
-      <div class="div-container">
-        <i class="fas fa-key"></i>
-        <input class="div-container__input" type="password" placeholder="Password"/>
-      </div>
-      <div>
-        <a href="#/homeWUP"><input type="submit" value="LOGIN" class="div-container__button"></a>
-      </div>
-    </form>
-    <div class="div-container__register" >
-      <p>Or login with:</p>
-       <button class="div-container__button--google" id="loginGoogle">
-         <i class="fab fa-google"></i>
-        </button>
+      <img class="logo" src="./imagen/logo_wup.jpg">
     </div>
-    <div class="div-container__register" >
+    <div class="">
+      <p>Login:</p>
+      <div class="input-contenedor">
+        <i class="fas fa-envelope icon"></i>
+        <input class="input-init" type="email" id="login-email" placeholder="Correo Electronico">
+      </div>
+      <div class="input-contenedor">
+        <i class="fas fa-key icon"></i>
+        <input class="input-init" type="password" id="login-password" placeholder="Contraseña">
+      </div>
+      <div>
+        <a href="#/feed"><input type="submit" value="Ingresa" class="button"></a>
+      </div>
+    </div>
+  </form>
+  <div class="formulario-2">
+    <div class="input-contenedor-google">
+     <div>
+        <img class="google-icon" src="./imagen/logo_mail.jpg">
+     </div>
+     <button id="login-google" class="btn-google">Ingresa con</button>
+     <img class="google-icons" src="./imagen/logo_google.jpg">
+    </div>
+    <div>
       <p>You do not have an account?:</p>
-      <a id="buttonRegister" href="#/register"><button class="div-container__button--signup">Sign up</button></a>
+      <a id="btn-register" href="#/register"><button class="check-in">Registrate aquí</button></a>
     </div>
   </div>
-  </div>`;
+</div>`;
 
   divLogin.innerHTML = viewLogin;
-  const googleLogin = divLogin.querySelector('#loginGoogle');
+  const googleLogin = divLogin.querySelector('#login-google');
   googleLogin.addEventListener('click', () => {
     googleProvider();
   });

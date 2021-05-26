@@ -16,7 +16,7 @@ const showTemplate = (hash) => {
       login();
       break;
     default:
-      containerRoot.innerHTML = '<h2>Error raroooo</h2>';
+      containerRoot.innerHTML = '<h2>Error</h2>';
   }
 };
 

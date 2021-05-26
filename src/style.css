@@ -1,62 +1,82 @@
-/* .not-visible {
+.not-visible {
   display: none;
-} */
-* {
-  box-sizing: border-box;
+}
+body {
+  font-family: Arial, Helvetica, sans-serif;
   margin: 0;
 }
-
-body {
-  font-family: sans-serif;
-  font-size: 100%;
-  /* margin: 0px; */
+* {
+  box-sizing: border-box;
 }
-
-/* logo login */
-.logo-app {
-  max-width:100%;
-  /* max-height: 100%; */
-  /* margin-left: -7%; */
-}
-/* container de la pagina */
-.login-container {
+header {
+  padding: 10px;
+  padding-bottom: 0;
+  border-bottom: 1px solid rgb(0, 0, 0);
   display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  /* padding: 20px; */
-  background-color: #FFFFFE;
-  
-  border: 30px solid #078080;
 }
-.login-container div{
-  margin: 15px;
+.logo-header {
+  width: 20%;
+  margin-left: 3%;
 }
-/* email y password container */
-.div-container {
-  display: flex;
-  align-items: baseline ;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  padding: 0.9em;
-  text-align: center;
-}
-  /* iconos */
-.div-container i {
-  /* text-align: center; */
-  min-width: 3.125em;
-  color: #232323;
-}
-
-/* input email y password */
-.div-container__input{
-  font-size: 1rem;
-  border: none;
+.contenedor {
   width: 100%;
-  text-align: center;  
+  padding: 20px;
+  background-color: #f8f5f2;
+  border: 60px solid #078080;
 }
-
-/* boton login  */
-.div-container__button {
+.logo {
+  width: 50%;
+  margin-left: 22%;
+}
+.formulario {
+  margin-top: 40px;
+  padding: 20px;
+}
+.formulario-2 {
+  padding: 20px;
+  padding-top: 0px;
+}
+.input-init {
+  font-size: 0.9em;
+  padding: 10px;
+  border: none;
+  width: 80%;
+  text-align: left;
+  margin-bottom: 2%;
+}
+.input-contenedor {
+  margin-bottom: 15px;
+  border: 1px solid #aaa;
+}
+.icon {
+  min-width: 50px;
+  text-align: center;
+  color: #000;
+}
+.google-icon {
+  width: 60px;
+  display: block;
+}
+.google-icons {
+  width: 18%;
+  margin-top: 0%;
+}
+.logo-header {
+  width: 50%;
+}
+.container-logo {
+  display: flex;
+}
+.container-icon {
+  display: flex;
+  align-items: center;
+}
+.flecha {
+  color: rgb(0, 0, 0);
+  align-items: center;
+  padding-top: 10%;
+}
+.button {
   border-radius: 12px;
   width: 100%;
   color: #ececec;
@@ -67,14 +87,16 @@ body {
   cursor: pointer;
   box-shadow: rgba(0, 0, 0, 0.4) 1px 2px 2px;
 }
-
-.div-container__register{
-  display: flex;
-  align-items: center;
-  flex-direction: column;
+.btn-google {
+  border: none;
+  background: #ffffff;
+  width: 70%;
+  color: black;
+  font-size: 0.9em;
+  padding: 11px;
+  cursor: pointer;
 }
-
-.div-container__button--google{
+.input-contenedor-google {
   margin-bottom: 15px;
   border: 1px solid #f45d48;
   border-radius: 4px;
@@ -82,36 +104,25 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-
 }
-
-/* boton de registrarse */
-.div-container__button--signup {
+.check-in {
   border: none;
   width: 100%;
   height: 10%;
   color: #000000fa;
-  background: #FFFFFE;
   font-weight: bold;
   font-size: 1em;
+  background: #f8f5f2;
   padding: 10px 15px;
   cursor: pointer;
 }
-/* p {
+p {
   font-size: 0.8em;
 }
 h2 {
   font-size: 0.7em;
   margin-left: 18px;
   margin-top: 20px;
-}
-#arrow {
-  margin: 0 0 0 0.25rem;
-  font-weight: 700;
-  font-size: 1.5rem;
-  text-decoration: none;
-  align-self: flex-start;
-  color: black;
 }
 .imagesFeed {
   display: flex;
@@ -131,11 +142,8 @@ h2 {
   height: 40px;
   color: black;
   font-size: 0.9em;
-  background: #ff9635;
+  background: #f45d48;
   cursor: pointer;
-}
-.publish {
-  margin-top: 40px;
 }
 .btn-feed {
   display: flex;
@@ -166,7 +174,6 @@ h5 {
   margin-left: 2%;
   color: rgb(0, 0, 0);
 }
-
 .Container-camera {
   margin-top: 20px;
   width: 100%;
@@ -193,38 +200,6 @@ h5 {
   background: none;
   color: black;
 }
-.ctn-receta {
-  font-size: 0.9em;
-  border: none;
-  width: 100px;
-  height: 30px;
-  text-align: left;
-  margin-bottom: 2%;
-  background-color: #e5e5e5;
-  margin-left: 10%;
-}
-.ctn-rct {
-  border-bottom: 2px solid #e5e5e5;
-}
-.ctn-receta3 {
-  font-size: 0.9em;
-  border: none;
-  width: 100px;
-  height: 30px;
-  text-align: left;
-  margin-bottom: 2%;
-  background-color: #e5e5e5;
-  margin-left: 32%;
-}
-.ctn-receta2 {
-  font-size: 0.9em;
-  border: none;
-  width: 280px;
-  height: 30px;
-  text-align: left;
-  margin-bottom: 2%;
-  background-color: #e5e5e5;
-}
 .add {
   margin-left: -34px;
   margin-bottom: 5%;
@@ -242,7 +217,7 @@ label {
   height: 24px;
   color: black;
   font-size: 0.7em;
-  background: #ff9635;
+  background: #f45d48;
   cursor: pointer;
   border: 0;
 }
@@ -266,14 +241,13 @@ label {
   width: 30px;
   height: 30px;
   border-radius: 15px;
-} */
-/*CARROUSEL*/
-
-/* .carousel {
+}
+/CARROUSEL/
+.carousel {
   width: 100%;
-  display: flex;
+  /*display: flex;
       height: 100vh;
-      align-items: center;
+      align-items: center; */
 }
 h4,
 h6,
@@ -295,9 +269,9 @@ a {
 h6 {
   margin-left: 5%;
   margin-top: 5%;
-} */
-/*imagen*/
-/* .slick-list {
+}
+/imagen/
+.slick-list {
   position: relative;
   display: flex;
   align-items: center;
@@ -338,7 +312,6 @@ h6 {
   font-size: 15px;
   display: block;
 }
-
 .slick a img {
   object-fit: cover;
   height: 300px;
@@ -347,13 +320,11 @@ h6 {
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.5);
   transition: 0.3 ease-in-out;
 }
-
 .slick a img:hover {
   opacity: 0.85;
-} */
-
+}
 /* buttons */
-/* .slick-arrow {
+.slick-arrow {
   border-radius: 30px;
   background-color: #fff;
   position: absolute;
@@ -365,7 +336,6 @@ h6 {
   border: 0;
   cursor: pointer;
 }
-
 .slick-arrow:focus {
   outline: 0;
 }
@@ -375,7 +345,6 @@ h6 {
   margin-top: 30%;
   color: rgba(0, 0, 0, 0.7);
 }
-
 .slick-prev {
   left: 0px;
 }
@@ -400,18 +369,18 @@ h6 {
   padding: 5%;
   flex-direction: row;
 }
-
 .icon-clock {
   margin-left: 2%;
   padding: 5%;
   font-size: 15px;
   flex-direction: row;
 }
-
 input[type="checkbox" i] {
   font-size: 12px;
 }
-
+input[type="submit" i] {
+  border-width: 0;
+}
 .container3 {
   display: flex;
   align-items: center;
@@ -420,8 +389,8 @@ input[type="checkbox" i] {
   margin-left: 11px;
 }
 @media (min-width: 768px) {
-  .form-login,
-  .form-login-google,
+  .formulario,
+  .formulario-2,
   header,
   .imagesFeed,
   .btn-feed,
@@ -439,4 +408,4 @@ input[type="checkbox" i] {
     width: 500px;
     font-size: 14px;
   }
-   */
+}

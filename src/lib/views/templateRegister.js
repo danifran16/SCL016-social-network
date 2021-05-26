@@ -8,7 +8,7 @@ export const register = () => {
         <i id="arrow" class="fas fa-chevron-left"></i>
       </a>
       <div>
-        <img class="logo" src="./imagen/logo_wup_peq.jpeg">
+        <img class="logo" src="./imagen/./imagen/logo_wup.jpg">
       </div>
       <div class="contenedor">
         <p>Regístrate con tu E-mail:</p>
@@ -40,7 +40,7 @@ export const register = () => {
   divRegister.innerHTML = viewRegister;
   const signupForm = divRegister.querySelector('#signup-form');
   // id formulario de registro
-  const btnRegister = divRegister.querySelector('#button-register');
+  const btnRegister = divRegister.querySelector('#btn-register');
   btnRegister.addEventListener('click', (event) => {
     console.log('helloooooo');
     event.preventDefault(); // para cancelar el evento del reinicio del formulario
@@ -55,5 +55,3 @@ export const register = () => {
 
   return divRegister;
 };
-
-// const generateRegisterListener = () => {};
