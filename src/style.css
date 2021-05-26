@@ -1,118 +1,103 @@
-.not-visible {
+/* .not-visible {
   display: none;
-}
-body {
-  font-family: Arial, Helvetica, sans-serif;
-  margin: 0;
-}
+} */
 * {
   box-sizing: border-box;
+  margin: 0;
 }
-header {
-  padding: 10px;
-  padding-bottom: 0;
-  border-bottom: 1px solid rgb(0, 0, 0);
+
+body {
+  font-family: sans-serif;
+  font-size: 100%;
+  /* margin: 0px; */
+}
+
+/* logo login */
+.logo-app {
+  max-width:100%;
+  /* max-height: 100%; */
+  /* margin-left: -7%; */
+}
+/* container de la pagina */
+.login-container {
   display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  /* padding: 20px; */
+  background-color: #FFFFFE;
+  
+  border: 30px solid #078080;
 }
-.logo-header {
-  width: 20%;
-  margin-left: 3%;
+.login-container div{
+  margin: 15px;
 }
-.contenedor {
-  width: 100%;
-  padding: 20px;
-  background-color: #f8f5f2;
-  border: 60px solid #078080;
-}
-.logo {
-  width: 50%;
-  margin-left: 22%;
-}
-.formulario {
-  margin-top: 40px;
-  padding: 20px;
-}
-.formulario-2 {
-  padding: 20px;
-  padding-top: 0px;
-}
-.input-init {
-  font-size: 0.9em;
-  padding: 10px;
-  border: none;
-  width: 80%;
-  text-align: left;
-  margin-bottom: 2%;
-}
-.input-contenedor {
-  margin-bottom: 15px;
-  border: 1px solid #aaa;
-}
-.icon {
-  min-width: 50px;
+/* email y password container */
+.div-container {
+  display: flex;
+  align-items: baseline ;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  padding: 0.9em;
   text-align: center;
-  color: #000;
 }
-.google-icon {
-  width: 10%;
-  margin-top: 2%;
+  /* iconos */
+.div-container i {
+  /* text-align: center; */
+  min-width: 3.125em;
+  color: #232323;
 }
-.google-icons {
-  width: 18%;
- margin-top: 0%;
+
+/* input email y password */
+.div-container__input{
+  font-size: 1rem;
+  border: none;
+  width: 100%;
+  text-align: center;  
 }
-.logo-header {
-  width: 50%;
-}
-.container-logo {
-  display: flex;
-}
-.container-icon {
-  display: flex;
-  align-items: center;
-}
-.flecha {
-  color: rgb(0, 0, 0);
-  align-items: center;
-  padding-top: 10%;
-}
-.button {
+
+/* boton login  */
+.div-container__button {
   border-radius: 12px;
   width: 100%;
-  color: black;
+  color: #ececec;
   font-size: 1em;
   font-weight: bold;
   background: #f45d48;
   padding: 10px 15px;
   cursor: pointer;
+  box-shadow: rgba(0, 0, 0, 0.4) 1px 2px 2px;
 }
-.btn-google {
-  border: none;
-  background: #ffffff;
-  width: 70%;
-  color: black;
-  font-size: 0.9em;
-  padding: 11px;
-  cursor: pointer;
+
+.div-container__register{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
-.input-contenedor-google {
+
+.div-container__button--google{
   margin-bottom: 15px;
-  border: 3px solid #f45d48;
+  border: 1px solid #f45d48;
+  border-radius: 4px;
+  padding: 3px;
   display: flex;
   justify-content: center;
+  align-items: center;
+
 }
-.check-in {
+
+/* boton de registrarse */
+.div-container__button--signup {
   border: none;
   width: 100%;
   height: 10%;
   color: #000000fa;
+  background: #FFFFFE;
   font-weight: bold;
   font-size: 1em;
-  background: #f8f5f2;
   padding: 10px 15px;
   cursor: pointer;
 }
-p {
+/* p {
   font-size: 0.8em;
 }
 h2 {
@@ -281,14 +266,14 @@ label {
   width: 30px;
   height: 30px;
   border-radius: 15px;
-}
+} */
 /*CARROUSEL*/
 
-.carousel {
+/* .carousel {
   width: 100%;
-  /*display: flex;
+  display: flex;
       height: 100vh;
-      align-items: center; */
+      align-items: center;
 }
 h4,
 h6,
@@ -310,9 +295,9 @@ a {
 h6 {
   margin-left: 5%;
   margin-top: 5%;
-}
+} */
 /*imagen*/
-.slick-list {
+/* .slick-list {
   position: relative;
   display: flex;
   align-items: center;
@@ -365,10 +350,10 @@ h6 {
 
 .slick a img:hover {
   opacity: 0.85;
-}
+} */
 
 /* buttons */
-.slick-arrow {
+/* .slick-arrow {
   border-radius: 30px;
   background-color: #fff;
   position: absolute;
@@ -435,8 +420,8 @@ input[type="checkbox" i] {
   margin-left: 11px;
 }
 @media (min-width: 768px) {
-  .formulario,
-  .formulario-2,
+  .form-login,
+  .form-login-google,
   header,
   .imagesFeed,
   .btn-feed,
@@ -454,4 +439,4 @@ input[type="checkbox" i] {
     width: 500px;
     font-size: 14px;
   }
-  
+   */

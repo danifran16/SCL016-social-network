@@ -1,4 +1,4 @@
-// funcion para entrar con google
+/// funcion para entrar con google ///
 export const googleProvider = () => {
   const provider = new firebase.auth.GoogleAuthProvider();
 
@@ -23,6 +23,7 @@ export const googleProvider = () => {
   });
 };
 
+/// identificacion nuevo usuario con correo y contaseña ///
 export const userNew = (email, password) => {
   firebase.auth().createUserWithEmailAndPassword(email, password).then((userCredential) => {
       console.log('Registro Exitoso')
