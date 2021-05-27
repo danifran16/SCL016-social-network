@@ -24,3 +24,14 @@ export const userNew = (email, password) => {
       const errorMessage = error.message;
     });
 };
+//Funcion para crear post
+export const createPost = (postWordUp) => {
+  db.collection("post").add({
+    
+})
+.then((docRef) => {
+  console.log("Document written with ID: ", docRef.id);
+})
+.catch((error) => {
+  console.error("Error adding document: ", error);
+});

@@ -2,7 +2,8 @@ import { googleProvider } from '../firebase.js';
 
 export const login = () => {
   const divLogin = document.createElement('div');
-  const viewLogin = ` <div id="root"><div class="contenedor">
+  const viewLogin = ` 
+  <div id="root"><div class="contenedor">
   <form id="login-form" class="formulario">
     <div>
       <img class="logo" src="./imagen/logo_wup.jpg">

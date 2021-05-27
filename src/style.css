@@ -21,7 +21,7 @@ header {
 .contenedor {
   width: 100%;
   padding: 20px;
-  background-color: #f8f5f2;
+  background-color: rgb(255, 255, 255);
   border: 60px solid #078080;
 }
 .logo {
@@ -144,9 +144,6 @@ h2 {
   font-size: 0.9em;
   background: #f45d48;
   cursor: pointer;
-}
-.publish {
-  margin-top: 40px;
 }
 .btn-feed {
   display: flex;
