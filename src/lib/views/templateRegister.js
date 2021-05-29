@@ -8,7 +8,7 @@ export const register = () => {
         <i id="arrow" class="fas fa-chevron-left"></i>
       </a>
       <div>
-        <img class="logo" src="./imagen/./imagen/logo_wup.jpg">
+        <img class="logo" src="./imagen/logo_wup.jpg">
       </div>
       <div class="contenedor">
         <p>Regístrate con tu E-mail:</p>
@@ -54,4 +54,3 @@ export const register = () => {
   });
 
   return divRegister;
-};

@@ -1,5 +1,7 @@
 import { login } from './views/templateLogin.js';
 import { register } from './views/templateRegister.js';
+import { create } from './views/templateHome.js';
+
 
 const showTemplate = (hash) => {
   const containerRoot = document.getElementById('root');

@@ -21,7 +21,7 @@ header {
 .contenedor {
   width: 100%;
   padding: 20px;
-  background-color: #f8f5f2;
+  background-color: rgb(255, 255, 255);
   border: 60px solid #078080;
 }
 .logo {
