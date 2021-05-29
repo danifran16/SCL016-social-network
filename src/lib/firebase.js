@@ -35,3 +35,4 @@ export const createPost = (postWordUp) => {
 .catch((error) => {
   console.error("Error adding document: ", error);
 });
+};
