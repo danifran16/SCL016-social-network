@@ -42,7 +42,6 @@ export const register = () => {
   // id formulario de registro
   const btnRegister = divRegister.querySelector('#btn-register');
   btnRegister.addEventListener('click', (event) => {
-    console.log('helloooooo');
     event.preventDefault(); // para cancelar el evento del reinicio del formulario
     // const signupUserName = document.querySelector('#singup-username').value;
     const signupEmail = divRegister.querySelector('#signup-email').value;

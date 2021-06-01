@@ -1,4 +1,5 @@
 import { googleProvider } from '../firebase.js';
+import { signIn } from '../firebase.js';
 
 export const login = () => {
   const divLogin = document.createElement('div');

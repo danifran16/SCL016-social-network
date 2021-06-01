@@ -1,7 +1,6 @@
 import { login } from './views/templateLogin.js';
 import { register } from './views/templateRegister.js';
-import { create } from './views/templateHome.js';
-
+import { post } from './views/templateHome.js';
 
 const showTemplate = (hash) => {
   const containerRoot = document.getElementById('root');
@@ -13,6 +12,9 @@ const showTemplate = (hash) => {
       break;
     case '#/register':
       containerRoot.appendChild(register());
+      break;
+    case '#/home':
+      containerRoot.appendChild(post());
       break;
     case '#/':
       login();
@@ -30,6 +32,9 @@ export const changeRoute = (hash) => {
     return showTemplate(hash);
   }
   if (hash === '#/register') {
+    return showTemplate(hash);
+  }
+  if (hash === '#/home') {
     return showTemplate(hash);
   }
   return showTemplate(hash);

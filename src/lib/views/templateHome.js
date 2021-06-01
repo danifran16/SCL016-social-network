@@ -1,12 +1,14 @@
-import { createPost } from '../firebase.js';
+// import { createPost } from '../firebase.js';
 
-export const create = () => {
+console.log('estoy aca');
+
+export const post = () => {
   const divCreate = document.createElement('div');
   const viewCreate = `
   <div class = "container-home">
   <h1>Bienvenido a WordUp, Comienza a Practicar!<h1>
     <nav>
-      <img class="logo" src="./imagen/logo_wup.jpg">
+     
       <select class="buttons-nav" name="Elige tu Idioma" id="selectLang">
           <option value="español">Español</option>
           <option value="ingles">Ingles</option>
