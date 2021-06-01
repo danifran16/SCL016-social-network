@@ -53,4 +53,3 @@ export const register = () => {
   });
 
   return divRegister;
-};
