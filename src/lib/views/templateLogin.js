@@ -1,10 +1,10 @@
-import { googleProvider } from '../firebase.js';
+import { googleProvider, singIn } from '../firebase.js';
 
 export const login = () => {
   const divLogin = document.createElement('div');
   const viewLogin = ` 
   <div id="root"><div class="contenedor">
-  <form id="login-form" class="formulario">
+  <div id="login-form" class="formulario">
     <div>
       <img class="logo" src="./imagen/logo_wup.jpg">
     </div>
@@ -19,17 +19,16 @@ export const login = () => {
         <input class="input-init" type="password" id="login-password" placeholder="Contraseña">
       </div>
       <div>
-        <a href="#/feed"><input type="submit" value="Ingresa" class="button"></a>
+        <a href="#/feed"><input type="button" value="Ingresa" class="button" id="buttonSignIn"></a>
       </div>
     </div>
-  </form>
+  </div>
   <div class="formulario-2">
     <div class="input-contenedor-google">
      <div>
-        <img class="google-icon" src="./imagen/logo_mail.jpg">
      </div>
-     <button id="login-google" class="btn-google">Ingresa con</button>
-     <img class="google-icons" src="./imagen/logo_google.jpg">
+     <button id="login-google" class="btn-google">Click Aquí</button>
+     <img class="google-icons" src="./imagen/google.png">
     </div>
     <div>
       <p>You do not have an account?:</p>
@@ -42,6 +41,11 @@ export const login = () => {
   const googleLogin = divLogin.querySelector('#login-google');
   googleLogin.addEventListener('click', () => {
     googleProvider();
+  });
+
+  const regularLogin = divLogin.querySelector('#buttonSignIn');
+  regularLogin.addEventListener('click', () => {
+    singIn();
   });
   return divLogin;
 };
