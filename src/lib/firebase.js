@@ -11,54 +11,49 @@ export const googleProvider = () => {
     const user = result.user;
     window.location.hash = '#/home';
     // ...
-  }).catch((error) => {
-    // Handle Errors here.
-    const errorCode = error.code;
-    const errorMessage = error.message;
-    // The email of the user's account used.
-    const email = error.email;
-    // The firebase.auth.AuthCredential type that was used.
-    const credential = error.credential;
-    // ...
+  }).catch(() => {
+    document.querySelector('.mess-user').innerHTML = 'Intenta nuevamente';
   });
 };
 
-// ingresar con cuenta registrada
-export const signIn = (email, password) => {
-  firebase.auth().signInWithEmailAndPassword(email, password).then((userCredential) => {
-    // Signed in
-    var user = userCredential.user;
-    // ...
-  }
-    .catch((error) => {
-    var errorCode = error.code;
-    var errorMessage = error.message;
-  });
-
-  //crear cuenta usuario nuevo
+// crear cuenta usuario nuevo
 export const userNew = (email, password) => {
   firebase.auth().createUserWithEmailAndPassword(email, password).then((userCredential) => {
-    console.log('Registro Exitoso');
     const user = userCredential.user;
-  }
-    .catch((error) => {
-      const errorCode = error.code;
-      const errorMessage = error.message;
-      console.log(error);
-    // ..
+    const database = firebase.firestore();
+    document.querySelector('.mess-user').innerHTML = 'Tu cuenta fue creada';
+      return database.collection('user').doc(user.uid).set({
+        name: username,
+        email,
+      });
+    })
+    .catch(() => {
+      document.querySelector('.mess-user').innerHTML = 'Intenta nuevamente';
     });
 };
 
+// ingresar con cuenta registrada
+export const singIn = () => {
+  const email = document.getElementById('login-email').value;
+  const password = document.getElementById('login-password').value;
+  firebase.auth().signInWithEmailAndPassword(email, password)
+    .then(() => {
+      window.location.hash = '#/home';
+    })
+    .catch(() => {
+      window.location.hash = '#/error';
+    });
+};
 
-//crear post
-export const createPost = (postWordUp) => {
-  db.collection("post").add({
-    
-})
-}
-.then((docRef) => {
-  console.log("Document written with ID: ", docRef.id);
-})
-.catch((error) => {
-  console.error("Error adding document: ", error);
-})
+// //crear post
+// export const createPost = (postWordUp) => {
+//   db.collection("post").add({
+
+// })
+// }
+// .then((docRef) => {
+//   console.log("Document written with ID: ", docRef.id);
+// })
+// .catch((error) => {
+//   console.error("Error adding document: ", error);
+// })
