@@ -3,9 +3,10 @@ import { googleProvider, singIn } from '../firebase.js';
 export const login = () => {
   const divLogin = document.createElement('div');
   const viewLogin = ` 
-  <div id="root"><div class="contenedor">
-  <div id="login-form" class="formulario">
-    <div>
+  <div id="root">
+    <div  id="contenedor" class="contenedor">
+      <div id="login-form" class="formulario">
+        <div>
       <img class="logo" src="./imagen/logo_wup.jpg">
     </div>
     <div class="">
@@ -19,16 +20,16 @@ export const login = () => {
         <input class="input-init" type="password" id="login-password" placeholder="Contraseña">
       </div>
       <div>
-        <a href="#/feed"><input type="button" value="Ingresa" class="button" id="buttonSignIn"></a>
+        <input type="button" value="Ingresa" class="button" id="buttonSignIn">
       </div>
     </div>
   </div>
   <div class="formulario-2">
     <div class="input-contenedor-google">
-     <div>
-     </div>
-     <button id="login-google" class="btn-google">Click Aquí</button>
-     <img class="google-icons" src="./imagen/google.png">
+      <div>
+      </div>
+      <button id="login-google" class="btn-google">Click Aquí</button>
+      <img class="google-icons" src="./imagen/google.png">
     </div>
     <div>
       <p>You do not have an account?:</p>
@@ -45,7 +46,9 @@ export const login = () => {
 
   const regularLogin = divLogin.querySelector('#buttonSignIn');
   regularLogin.addEventListener('click', () => {
-    singIn();
+    const email = document.getElementById('login-email').value;
+    const password = document.getElementById('login-password').value;
+    singIn(email, password);
   });
   return divLogin;
 };

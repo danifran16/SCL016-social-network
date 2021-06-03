@@ -17,17 +17,14 @@ const showTemplate = (hash) => {
       containerRoot.appendChild(post());
       break;
     case '#/':
-      login();
+      containerRoot.appendChild(login());
       break;
     default:
-      containerRoot.innerHTML = '<h2>Error</h2>';
+      containerRoot.innerHTML = '<h2>pagina no encontrada</h2>';
   }
 };
 
 export const changeRoute = (hash) => {
-  if (hash === '#/') {
-    return showTemplate(hash);
-  }
   if (hash === '#/login') {
     return showTemplate(hash);
   }
@@ -35,6 +32,9 @@ export const changeRoute = (hash) => {
     return showTemplate(hash);
   }
   if (hash === '#/home') {
+    return showTemplate(hash);
+  }
+  if (hash === '#/') {
     return showTemplate(hash);
   }
   return showTemplate(hash);
