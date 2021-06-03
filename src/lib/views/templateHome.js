@@ -1,4 +1,4 @@
-import { createPost } from '../firebase.js';
+import { createPost, showPost } from '../firebase.js';
 
 export const post = () => {
   const divCreate = document.createElement('div');
@@ -27,24 +27,24 @@ export const post = () => {
         <textarea id="postNew" class="post-new" placeholder="Escribe tu Post"></textarea>
         <button id="saveButton" class="button-2">WordUpear</button> 
       </div>  
-
-    </form>   
-
+    </form> 
+   
+    <div id="getPost"></div>
 </div>
 `;
+  
   divCreate.innerHTML = viewCreate;
 
   const newPost = divCreate.querySelector('#saveButton');
   newPost.addEventListener('click', () => {
     const inputPost = divCreate.querySelector('#postNew').value;
     createPost(inputPost);
+
+    const showNewPost = divCreate.querySelector('#getPost');
+    showNewPost.addEventListener('click', () => {
+      showPost(inputPost);
+    });
   });
   return divCreate;
 };
 
-// // PARA PINTAR EN PANTALLA
-// window.addEventListener('DOMContentLoaded', async (e) => {
-//   const querySnapshot = await getPosts();
-//   querySnapshot.forEach((doc) => {
-
-// }
