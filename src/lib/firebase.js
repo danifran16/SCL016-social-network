@@ -1,59 +1,60 @@
+// PARA INGRESAR POR GOOGLE (REVISADO, ESTA BIEN)
 export const googleProvider = () => {
   const provider = new firebase.auth.GoogleAuthProvider();
 
   firebase.auth().signInWithPopup(provider).then((result) => {
-    // /** @type {firebase.auth.OAuthCredential} */
     const credential = result.credential;
-
-    // This gives you a Google Access Token. You can use it to access the Google API.
     const token = credential.accessToken;
-    // The signed-in user info.
     const user = result.user;
     window.location.hash = '#/home';
-    // ...
   }).catch(() => {
-    document.querySelector('.mess-user').innerHTML = 'Intenta nuevamente';
+    window.location.hash = '#/error';
   });
 };
-
-// crear cuenta usuario nuevo
+// CREAR CUENTA (REVISADO, ESTA BIEN)
 export const userNew = (email, password) => {
-  firebase.auth().createUserWithEmailAndPassword(email, password).then((userCredential) => {
-    const user = userCredential.user;
-    const database = firebase.firestore();
-    document.querySelector('.mess-user').innerHTML = 'Tu cuenta fue creada';
+  firebase.auth().createUserWithEmailAndPassword(email, password)
+
+    .then((userCredential) => {
+      const user = userCredential.user;
+      const database = firebase.firestore();
+      window.location.hash = '#/login';
       return database.collection('user').doc(user.uid).set({
-        name: username,
-        email,
       });
     })
     .catch(() => {
-      document.querySelector('.mess-user').innerHTML = 'Intenta nuevamente';
+      window.location.hash = '#/error';
     });
 };
-
-// ingresar con cuenta registrada
+// INGRESAR CON CUENTA YA CREADA (DA ERROR, y de inmediato INGRESA AL HOME)
 export const singIn = () => {
   const email = document.getElementById('login-email').value;
   const password = document.getElementById('login-password').value;
   firebase.auth().signInWithEmailAndPassword(email, password)
     .then(() => {
       window.location.hash = '#/home';
-    })
-    .catch(() => {
+    }).catch(() => {
       window.location.hash = '#/error';
     });
 };
+// CREAR POST (NO SE PINTA EN PANTALLA, SOLO EN FB)
+export const createPost = (postWordUp) => {
+  const database = firebase.firestore();
+  database.collection('post').add({
+    comentario: postWordUp,
+  })
+    .then((docRef) => {
+      console.log('Document written with ID: ', docRef.id);
+    })
+    .catch((error) => {
+      console.error('Error adding document: ', error);
+    });
+};
 
-// //crear post
-// export const createPost = (postWordUp) => {
-//   db.collection("post").add({
+// // PINTA POST GUARDADOS EN FS
+// export const getPosts = () => database.collection('post').get();
 
-// })
-// }
-// .then((docRef) => {
-//   console.log("Document written with ID: ", docRef.id);
-// })
-// .catch((error) => {
-//   console.error("Error adding document: ", error);
-// })
+// // // export const savePost = (description) => database.collection('post').doc().set({
+// // //   user: firebase.auth().currentUser.email,
+// // //   description,
+// // // });

@@ -28,6 +28,17 @@ header {
   width: 50%;
   margin-left: 22%;
 }
+.logo-home {
+  width: 25%;
+  margin-left: 33%;
+}
+.buttons-nav {
+  padding: 8px 25px;
+  width: 150px;
+  border: 3px solid #f45d48;
+  border-radius: 8px;
+  padding: 3px;
+}
 .formulario {
   margin-top: 40px;
   padding: 20px;
@@ -86,6 +97,16 @@ header {
   padding: 10px 15px;
   cursor: pointer;
   box-shadow: rgba(0, 0, 0, 0.4) 1px 2px 2px;
+}
+.button-2 {
+  color: #ececec;
+  font-weight: bold;
+  background: #f45d48;
+  cursor: pointer;
+  box-shadow: rgba(0, 0, 0, 0.4) 1px 2px 2px;
+  width: 80px;
+  border-radius: 8px;
+  padding: 3px;
 }
 .btn-google {
   border: none;
@@ -146,110 +167,6 @@ h2 {
   background: #f45d48;
   cursor: pointer;
 }
-.btn-feed {
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-  justify-content: space-around;
-}
-.container2 {
-  width: 100%;
-  border-bottom: 1px solid rgb(0, 0, 0);
-  border-top: 1px solid rgb(0, 0, 0);
-  margin-bottom: 5%;
-  height: 132px;
-}
-.img-post {
-  padding: 10px;
-  width: 126px;
-  height: 100px;
-}
-.post {
-  display: flex;
-}
-h5 {
-  margin: 8px;
-}
-.icon-feed2 {
-  min-width: 50px;
-  margin-left: 2%;
-  color: rgb(0, 0, 0);
-}
-.Container-camera {
-  margin-top: 20px;
-  width: 100%;
-  height: 100%;
-  background-color: #e5e5e5;
-  text-align: center;
-  border: none;
-}
-.camera {
-  color: rgb(0, 0, 0);
-  width: 100%;
-  height: 100%;
-  font-size: 3em;
-  text-align: center;
-  cursor: pointer;
-}
-.container-recipe {
-  padding: 0 20px;
-  text-align: left;
-  padding-left: 33px;
-}
-.clear {
-  border: none;
-  background: none;
-  color: black;
-}
-.add {
-  margin-left: -34px;
-  margin-bottom: 5%;
-}
-label {
-  font-size: 0.9em;
-}
-.follow-divbutton {
-  display: flex;
-  margin-right: 60px;
-  height: 30px;
-}
-.btn-follow {
-  width: 70px;
-  height: 24px;
-  color: black;
-  font-size: 0.7em;
-  background: #f45d48;
-  cursor: pointer;
-  border: 0;
-}
-.details-rcp {
-  font-size: 0.8em;
-  color: black;
-  margin-left: 144px;
-  margin-top: -10%;
-  display: flex;
-}
-.details-rcp :hover {
-  color: #d86c07;
-}
-.details-rcp :visited {
-  color: red;
-}
-.prueba {
-  display: flex;
-}
-.user-img {
-  width: 30px;
-  height: 30px;
-  border-radius: 15px;
-}
-/CARROUSEL/
-.carousel {
-  width: 100%;
-  /*display: flex;
-      height: 100vh;
-      align-items: center; */
-}
 h4,
 h6,
 small,
@@ -271,18 +188,7 @@ h6 {
   margin-left: 5%;
   margin-top: 5%;
 }
-/imagen/
-.slick-list {
-  position: relative;
-  display: flex;
-  align-items: center;
-  width: fit-content;
-  height: 304px;
-  padding: 10px 0px;
-  margin: 0px auto;
-  max-width: hidden;
-  overflow: hidden;
-}
+
 .slick-track {
   position: relative;
   top: 0;
@@ -388,21 +294,21 @@ input[type="submit" i] {
 }
 .container3 p {
   margin-left: 11px;
-}
+} */
 @media (min-width: 768px) {
   .formulario,
   .formulario-2,
   header,
   .imagesFeed,
   .btn-feed,
-  .container2,
+  .
+  }container2,
   .Container-camera,
   .container-recipe,
   .carousel {
     margin-top: 0;
     margin: auto;
     width: 500px;
-  }
   h2 {
     margin-top: 0;
     margin: auto;

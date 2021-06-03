@@ -17,10 +17,10 @@ export const login = () => {
       <div class="input-contenedor">
         <i class="fas fa-key icon"></i>
         <input class="input-init" type="password" id="login-password" placeholder="Contraseña">
-      </div>
-      <div>
-        <a href="#/feed"><input type="button" value="Ingresa" class="button" id="buttonSignIn"></a>
-      </div>
+       </div>
+       <div>
+      <input type="button" value="Ingresa" class="button" id="buttonSignIn">
+       </div>
     </div>
   </div>
   <div class="formulario-2">

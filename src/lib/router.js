@@ -1,6 +1,7 @@
 import { login } from './views/templateLogin.js';
 import { register } from './views/templateRegister.js';
 import { post } from './views/templateHome.js';
+import { errorPage } from './views/templateError.js';
 
 const showTemplate = (hash) => {
   const containerRoot = document.getElementById('root');
@@ -20,7 +21,7 @@ const showTemplate = (hash) => {
       login();
       break;
     default:
-      containerRoot.innerHTML = '<h2>Error</h2>';
+      containerRoot.appendChild(errorPage());
   }
 };
 
