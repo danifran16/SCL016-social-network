@@ -1,53 +1,46 @@
-// Autentificacion con Google
+// PARA INGRESAR POR GOOGLE (REVISADO, ESTA BIEN)
 export const googleProvider = () => {
   const provider = new firebase.auth.GoogleAuthProvider();
 
-  firebase.auth().signInWithPopup(provider)
-    .then((result) => {
-      const credential = result.credential;
-      const token = credential.accessToken;
-      const user = result.user;
-      window.location.hash = '#/home';
+  firebase.auth().signInWithPopup(provider).then((result) => {
+    const credential = result.credential;
+    const token = credential.accessToken;
+    const user = result.user;
+    window.location.hash = '#/home';
+  }).catch(() => {
+    window.location.hash = '#/error';
+  });
+};
+
+// CREAR CUENTA (REVISADO, ESTA BIEN)
+export const userNew = (email, password) => {
+  firebase.auth().createUserWithEmailAndPassword(email, password)
+
+    .then((userCredential) => {
+      const user = userCredential.user;
+      const database = firebase.firestore();
+      window.location.hash = '#/login';
+      return database.collection('user').doc(user.uid).set({
+      });
     })
     .catch(() => {
       window.location.hash = '#/error';
     });
 };
 
-// Crear cuenta usuario nuevo
-export const userNew = (email, password) => {
-  firebase.auth().createUserWithEmailAndPassword(email, password)
-    .then((userCredential) => {
-      const user = userCredential.user;
-      window.location.hash = '#/login';
-      const database = firebase.firestore();
-      return database.collection('user').doc(user.uid).set({});
+// INGRESAR CON CUENTA YA CREADA
+export const singIn = () => {
+  const email = document.getElementById('login-email').value;
+  const password = document.getElementById('login-password').value;
+  firebase.auth().signInWithEmailAndPassword(email, password)
+    .then(() => {
+      window.location.hash = '#/home';
     }).catch(() => {
       window.location.hash = '#/error';
     });
 };
 
-// var user = firebase.auth().currentUser;
-
-// user.sendEmailVerification().then(function() {
-//   // Email sent.
-// }).catch(function(error) {
-//   // An error happened.
-// });
-
-// ingresar con cuenta registrada
-export const singIn = (email, password) => {
-  firebase.auth().signInWithEmailAndPassword(email, password)
-    .then(() => {
-      window.location.hash = '#/home';
-    })
-    .catch(() => {
-      alert('revisa email o password');
-      // .reset();
-    });
-};
-
-// crear post
+// CREAR y guardarPOST (NO SE PINTA EN PANTALLA, SOLO EN FB)
 export const createPost = (postWordUp) => {
   const database = firebase.firestore();
   database.collection('post').add({
@@ -61,6 +54,7 @@ export const createPost = (postWordUp) => {
     });
 };
 
+// PINTAR EN PANTALLA
 export const showPost = () => {
   const database = firebase.firestore();
   database.collection('post').onSnapshot()
