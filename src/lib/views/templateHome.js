@@ -28,23 +28,24 @@ export const post = () => {
         <button id="saveButton" class="button-2">WordUpear</button> 
       </div>  
     </form> 
-   
     <div id="getPost"></div>
 </div>
 `;
-  
   divCreate.innerHTML = viewCreate;
 
   const newPost = divCreate.querySelector('#saveButton');
+  const nuevoPost = document.getElementById('getPost');
+
   newPost.addEventListener('click', () => {
     const inputPost = divCreate.querySelector('#postNew').value;
-    createPost(inputPost);
 
-    const showNewPost = divCreate.querySelector('#getPost');
-    showNewPost.addEventListener('click', () => {
-      showPost(inputPost);
-    });
+    // nuevoPost.innerHTML += '';
+    createPost(inputPost);
+    showPost(inputPost);
+    // const showNewPost = divCreate.querySelector('#getPost');
+    // showNewPost.addEventListener('click', () => {
+    //   showPost(inputPost);
+    // });
   });
   return divCreate;
 };
-
