@@ -1,50 +1,53 @@
-import { createPost, showPost } from '../firebase.js';
+import { createPost, showPost, signOff } from '../firebase.js';
 
 export const post = () => {
   const divCreate = document.createElement('div');
   const viewCreate = `
-  <div>
-      <img class="logo-home" src="./imagen/logo_wup.jpg">
+  <div class = "contenedor">
+    <div>
+    <img class="logo-home" src="./imagen/logo_wup.jpg">
     </div>
-    <div class = "contenedor">
-
-    <h1>Bienvenido a WordUp<h1>
-    <h1>¡Comienza a Practicar!<h1>
-  <nav>
-      <select class="buttons-nav" name="Elige tu Idioma" id="selectLang">
-        <option value="español">Español</option>
-        <option value="ingles">Ingles</option>
-        <option value="frances">Frances</option>
-        <option value="aleman">Aleman</option>
-      </select>
-    <button type="button" class="buttons-nav">
+        <h1>Bienvenido a WordUp<h1>
+        <h1>¡Comienza a Practicar!<h1>
+    <nav>
+    <select class="buttons-nav" name="Elige tu Idioma" id="selectLang">
+      <option value="español">Español</option>
+      <option value="ingles">Ingles</option>
+      <option value="frances">Frances</option>
+      <option value="aleman">Aleman</option>
+    </select>
+    <button type="button" id="buttonLogOut" class="buttons-nav2">
     <span class="glyphicon glyphicon-log-out"></span> Log out
-  </nav>
-    
+    </nav>
   <form id="taskForm">
-
       <div class="formPost">
         <textarea id="postNew" class="post-new" placeholder="Escribe tu Post"></textarea>
         <button id="saveButton" class="button-2">WordUpear</button> 
       </div>  
-    </form> 
-   
-    <div id="getPost"></div>
+  </form> 
+        <div class="get-post" id="getPost"></div>
 </div>
 `;
-  
+
   divCreate.innerHTML = viewCreate;
 
   const newPost = divCreate.querySelector('#saveButton');
+
   newPost.addEventListener('click', () => {
     const inputPost = divCreate.querySelector('#postNew').value;
     createPost(inputPost);
-
-    const showNewPost = divCreate.querySelector('#getPost');
-    showNewPost.addEventListener('click', () => {
-      showPost(inputPost);
-    });
+    showPost(inputPost);
+    // // const showNewPost = divCreate.querySelector('#getPost');
+    // // showNewPost.addEventListener('click', () => {
+    // //   showPost(inputPost);
+    // });
   });
+
+  // Para cerrar sesion
+  const logOut = divCreate.querySelector('#buttonLogOut');
+  logOut.addEventListener('click', () => {
+    signOff();
+  });
+
   return divCreate;
 };
-
