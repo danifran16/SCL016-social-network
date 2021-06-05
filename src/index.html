@@ -36,7 +36,39 @@
     </script>
     <script type="module" src="main.js"></script>
   </body>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" />
+  <title>Word UP</title>
+  <link rel="icon" href="./imagen/logo_wup.jpg" />
+</head>
+
+<body>
+  <div id="root"></div>
+  <script src="https://www.gstatic.com/firebasejs/8.5.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.5.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.5.0/firebase-firestore.js"></script>
+  <script>
+    var firebaseConfig = {
+      apiKey: "AIzaSyBS4katvUvTASqHdgLETDjULJzzzQdrWp0",
+      authDomain: "red-social-word-up.firebaseapp.com",
+      databaseURL: "https://red-social-word-up-default-rtdb.firebaseio.com",
+      projectId: "red-social-word-up",
+      storageBucket: "red-social-word-up.appspot.com",
+      messagingSenderId: "767387774747",
+      appId: "1:767387774747:web:aab7a2d48507747236edbe",
+      measurementId: "G-PBVFGMPFCH",
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    const auth = firebase.auth();
+    const db = firebase.firestore();
+  </script>
+  <script type="module" src="main.js"></script>
+</body>
+
 </html>
-
-
-

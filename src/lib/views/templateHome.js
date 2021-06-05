@@ -24,6 +24,7 @@ export const post = () => {
         <textarea id="postNew" class="post-new" placeholder="Escribe tu Post"></textarea>
         <button id="saveButton" class="button-2">WordUpear</button> 
       </div>  
+
   </form> 
         <div class="get-post" id="getPost"></div>
 </div>
@@ -47,6 +48,27 @@ export const post = () => {
   const logOut = divCreate.querySelector('#buttonLogOut');
   logOut.addEventListener('click', () => {
     signOff();
+
+    </form> 
+    <div id="getPost"></div>
+</div>
+`;
+  divCreate.innerHTML = viewCreate;
+
+  const newPost = divCreate.querySelector('#saveButton');
+  const nuevoPost = document.getElementById('getPost');
+
+  newPost.addEventListener('click', () => {
+    const inputPost = divCreate.querySelector('#postNew').value;
+
+    // nuevoPost.innerHTML += '';
+    createPost(inputPost);
+    showPost(inputPost);
+    // const showNewPost = divCreate.querySelector('#getPost');
+    // showNewPost.addEventListener('click', () => {
+    //   showPost(inputPost);
+    // });
+
   });
 
   return divCreate;
