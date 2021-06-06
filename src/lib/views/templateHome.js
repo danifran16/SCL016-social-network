@@ -56,7 +56,7 @@ export const post = () => {
   divCreate.innerHTML = viewCreate;
 
   const newPost = divCreate.querySelector('#saveButton');
-  const nuevoPost = document.getElementById('getPost');
+  // const mostrarPost = document.getElementById('getPost');
 
   newPost.addEventListener('click', () => {
     const inputPost = divCreate.querySelector('#postNew').value;

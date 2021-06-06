@@ -90,20 +90,15 @@ export const createPost = (postWordUp) => {
 // PINTAR EN CONSOLA
 export const showPost = () => {
   db.collection('post').onSnapshot((querySnapshot) => {
-
     const nuevo = document.querySelector('#getPost');
+    // nuevo.innerHTML = '';
     querySnapshot.forEach((doc) => {
-    // console.log(`${doc.id} => ${doc.data().comentario}`);
+      // console.log(doc.id, doc.data().comentario);
       nuevo.innerHTML += `<div>${doc.data().comentario}</div>`;
-
-    // const postVacio = [];
-    querySnapshot.forEach((doc) => {
-      // postVacio.push(doc.data().comentario);
-      console.log(doc.id, doc.data().comentario);
-
     });
   });
 };
+  
 // PARA CERRAR SESION
 export const signOff = () => {
   firebase
