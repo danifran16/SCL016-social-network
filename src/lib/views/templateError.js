@@ -1,7 +1,7 @@
 export const errorPage = () => {
   const divError = document.createElement('div');
   const viewError = `
-      <img src="./imagen/error-button.jpg">
+      <img src="./imagen/error.jpg">
       `;
 
   divError.innerHTML = viewError;
