@@ -5,28 +5,21 @@ export const googleProvider = () => {
   firebase
     .auth()
     .signInWithPopup(provider)
-
-  firebase.auth().signInWithPopup(provider)
-
     .then((result) => {
       const credential = result.credential;
       const token = credential.accessToken;
       const user = result.user;
       window.location.hash = '#/home';
 
-    })
-    .catch(() => {
-
-    }).catch(() => {
-
+     }).catch(() => {
       window.location.hash = '#/error';
     });
 };
 
-// Inicializando Firestore
+// INICIALIZANDO FIREBASE
 const db = firebase.firestore();
 
-// CREAR CUENTA (REVISADO, ESTA BIEN)
+// CREAR CUENTA NUEVA
 export const userNew = (email, password) => {
 
   firebase
@@ -37,14 +30,6 @@ export const userNew = (email, password) => {
       window.location.hash = '#/login';
       return db.collection('user').doc(user.uid).set({});
 
-  firebase.auth().createUserWithEmailAndPassword(email, password)
-    .then((userCredential) => {
-      const user = userCredential.user;
-      window.location.hash = '#/login';
-      return db.collection('user').doc(user.uid).set({
-      });
-
-    })
     .catch(() => {
       window.location.hash = '#/error';
     });
@@ -56,12 +41,10 @@ export const singIn = (email, password) => {
   firebase
     .auth()
     .signInWithEmailAndPassword(email, password)
-
-  firebase.auth().signInWithEmailAndPassword(email, password)
-
     .then(() => {
       window.location.hash = '#/home';
     })
+    
     .catch(() => {
       window.location.hash = '#/error';
     });
@@ -74,14 +57,10 @@ export const createPost = (postWordUp) => {
     .add({
       comentario: postWordUp,
     })
-
-  db.collection('post').add({
-    comentario: postWordUp,
-  })
-
     .then((docRef) => {
       console.log('Document written with ID: ', docRef.id);
     })
+  
     .catch((error) => {
       console.error('Error adding document: ', error);
     });
@@ -89,15 +68,16 @@ export const createPost = (postWordUp) => {
 
 // PINTAR EN CONSOLA
 export const showPost = () => {
-  db.collection('post').onSnapshot((querySnapshot) => {
+  
+  db.collection('post')
+    .onSnapshot((querySnapshot) => {
     const nuevo = document.querySelector('#getPost');
-    // nuevo.innerHTML = '';
     querySnapshot.forEach((doc) => {
-      // console.log(doc.id, doc.data().comentario);
-      nuevo.innerHTML += `<div>${doc.data().comentario}</div>`;
+    nuevo.innerHTML += `<div>${doc.data().comentario}</div>`;
     });
   });
 };
+    
   
 // PARA CERRAR SESION
 export const signOff = () => {
