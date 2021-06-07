@@ -65,12 +65,11 @@ export const showPost = () => {
   db.collection('post').onSnapshot((querySnapshot) => {
     const nuevo = document.querySelector('#getPost');
     querySnapshot.forEach((doc) => {
-    // console.log(`${doc.id} => ${doc.data().comentario}`);
+      // console.log(`${doc.id} => ${doc.data().comentario}`);
       nuevo.innerHTML += `<div>${doc.data().comentario}</div>`;
     });
   });
 };
-
 // PARA CERRAR SESION
 export const signOff = () => {
   firebase
