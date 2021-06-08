@@ -2,5 +2,5 @@
 
 // export const cleanPost = () => {
 //   document.querySelector('#getPost');
-  
+
 // };

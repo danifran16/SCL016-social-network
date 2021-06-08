@@ -54,6 +54,7 @@ export const createPost = (postWordUp) => {
     })
     .then((docRef) => {
       console.log('Document written with ID: ', docRef.id);
+      document.getElementById('postNew').value = '';
     })
     .catch((error) => {
       console.error('Error adding document: ', error);
@@ -66,6 +67,7 @@ export const showPost = () => {
     const nuevo = document.querySelector('#getPost');
     querySnapshot.forEach((doc) => {
       // console.log(`${doc.id} => ${doc.data().comentario}`);
+      nuevo.innerHTML = '';
       nuevo.innerHTML += `<div>${doc.data().comentario}</div>`;
     });
   });
@@ -85,8 +87,9 @@ export const signOff = () => {
 
 firebase.auth().onAuthStateChanged((user) => {
   if (user) {
-    window.location.hash = '#/login';
+    window.location.hash = '#/home';
   } else {
-    window.location.hash = '#/';
+    window.location.hash = '#/login';
   }
 });
+
